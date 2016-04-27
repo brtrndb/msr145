@@ -10,6 +10,11 @@
 #include <stdio.h>
 #include <tchar.h>
 
-
-
 // TODO: faites référence ici aux en-têtes supplémentaires nécessaires au programme
+
+#define _X86_
+#include <windows.h>
+#include <minwindef.h>
+#include <string>
+#include <iostream>
+#include <cstdlib>
