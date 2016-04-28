@@ -121,7 +121,7 @@ float Msr145::get_pressure(UCHAR outL, UCHAR outH)
 	return (pressure);
 }
 
-float Msr145::get_temp(UCHAR outL, UCHAR outH)
+float Msr145::get_temp_rh(UCHAR outL, UCHAR outH)
 {
 	float temp = (float) ((((WORD) outH) << 8) + (WORD) outL) / 100;
 	return (temp);

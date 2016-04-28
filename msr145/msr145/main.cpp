@@ -30,9 +30,9 @@ int main()
 		float x = Msr145::get_acceleration(m.output[1]);
 		float y = Msr145::get_acceleration(m.output[2]);
 		float z = Msr145::get_acceleration(m.output[3]);
-		res = m.read_measurement(Msr145::PRESSURE, Msr145::TEMP, Msr145::HYGRO);
+		res = m.read_measurement(Msr145::PRESSURE, Msr145::TEMP_RH, Msr145::HYGRO);
 		float p = Msr145::get_pressure(m.output[1], m.output[2]);
-		float t = Msr145::get_temp(m.output[3], m.output[4]);
+		float t = Msr145::get_temp_rh(m.output[3], m.output[4]);
 		float h = Msr145::get_hygro(m.output[5], m.output[6]);
 		std::cout << "x=" << x << " y=" << y << " z=" << z << " p=" << p << " t=" << t << " h=" << h << std::endl;
 	}

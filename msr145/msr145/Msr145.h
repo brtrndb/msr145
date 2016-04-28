@@ -23,11 +23,16 @@ private:
 public:
 	static const int	PORT = 0;
 	static const int	PRESSURE = 0;
-	static const int	TEMP = 6;
+	static const int	TEMP_P = 1;
 	static const int	ACCX = 2;
 	static const int	ACCY = 3;
 	static const int	ACCZ = 4;
 	static const int	HYGRO = 5;
+	static const int	TEMP_RH = 6;
+	static const int	TEMP = 7;
+	static const int	BATTERY = 8;
+	static const int	PRESSURE2 = 9;
+	static const int	TEMP2 = 10;
 	UCHAR				output[7];
 
 	static const int	SUCCESS = 0;
@@ -53,7 +58,7 @@ public:
 	int				read_acceleration();
 
 	static float	get_pressure(UCHAR outL, UCHAR outH);
-	static float	get_temp(UCHAR outL, UCHAR outH);
+	static float	get_temp_rh(UCHAR outL, UCHAR outH);
 	static float	get_hygro(UCHAR outL, UCHAR outH);
 	static float	get_acceleration(UCHAR out);
 };
