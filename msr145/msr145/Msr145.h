@@ -48,9 +48,9 @@ public:
 	int				wake_up() const;
 	int				txrx(UCHAR in0, UCHAR in1, UCHAR in2, UCHAR in3, UCHAR in4, UCHAR in5, UCHAR in6, UCHAR *out0, UCHAR *out1, UCHAR *out2, UCHAR *out3, UCHAR *out4, UCHAR *out5, UCHAR *out6) const;
 
-	int				init_measurement(UCHAR output[7]) const;
-	int				read_measurement(int sensor1, int sensor2, int sensor3, UCHAR *output) const;
-	int				read_acceleration(UCHAR output[7]) const;
+	int				init_measurement();
+	int				read_measurement(int sensor1, int sensor2, int sensor3);
+	int				read_acceleration();
 
 	static float	get_pressure(UCHAR outL, UCHAR outH);
 	static float	get_temp(UCHAR outL, UCHAR outH);

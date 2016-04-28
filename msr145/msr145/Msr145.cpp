@@ -93,25 +93,25 @@ int Msr145::txrx(UCHAR in0, UCHAR in1, UCHAR in2, UCHAR in3, UCHAR in4, UCHAR in
 	return (res);
 }
 
-int Msr145::init_measurement(UCHAR out[7]) const
+int Msr145::init_measurement()
 {
 	int res = Msr145::SUCCESS;
-	res = txrx(6, 3, 0, 0xFF, 0xFF, 0, 0, &out[0], &out[1], &out[2], &out[3], &out[4], &out[5], &out[6]);
+	res = txrx(6, 3, 0, 0xFF, 0xFF, 0, 0, &(this->output[0]), &(this->output[1]), &(this->output[2]), &(this->output[3]), &(this->output[4]), &(this->output[5]), &(this->output[6]));
 	Sleep(500);
 	return (res);
 }
 
-int Msr145::read_measurement(int sensor1, int sensor2, int sensor3, UCHAR *out) const
+int Msr145::read_measurement(int sensor1, int sensor2, int sensor3)
 {
 	int res = Msr145::SUCCESS;
-	res = txrx((UCHAR) 2, (UCHAR) 2, (UCHAR) sensor1, (UCHAR) sensor2, (UCHAR) sensor3, 0, 0, &out[0], &out[1], &out[2], &out[3], &out[4], &out[5], &out[6]);
+	res = txrx((UCHAR) 2, (UCHAR) 2, (UCHAR) sensor1, (UCHAR) sensor2, (UCHAR) sensor3, 0, 0, &(this->output[0]), &(this->output[1]), &(this->output[2]), &(this->output[3]), &(this->output[4]), &(this->output[5]), &(this->output[6]));
 	return (res);
 }
 
-int Msr145::read_acceleration(UCHAR out[7]) const
+int Msr145::read_acceleration()
 {
 	int res = Msr145::SUCCESS;
-	res = txrx(2, 2, Msr145::ACCX, Msr145::ACCY, Msr145::ACCZ, 0, 0, &out[0], &out[1], &out[2], &out[3], &out[4], &out[5], &out[6]);
+	res = txrx(2, 2, Msr145::ACCX, Msr145::ACCY, Msr145::ACCZ, 0, 0, &(this->output[0]), &(this->output[1]), &(this->output[2]), &(this->output[3]), &(this->output[4]), &(this->output[5]), &(this->output[6]));
 	return (res);
 }
 
